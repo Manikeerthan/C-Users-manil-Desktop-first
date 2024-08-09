@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .master,body{
+            width: 100%;
+            height: 700px;
+            display:flex;
+            flex-direction: row;
+            background-color: rgb(11, 17, 1);
+            /* background-image: linear-gradient(to bottom,white, blueviolet); */
+            flex-direction: row;
+            gap: 50px;
+            
+            justify-content: space-evenly;
+        }
+        .column{
+            float: left;
+            margin-top: 10%;
+            /* margin-: ; */
+            width: 500px;
+            height: 500px;
+            background-color: rgb(215, 218, 220);
+            border-radius: 9px;
+            display: flex;
+            /* flex-direction: column; */
+            /* padding-left: 20%; */
+justify-content: center;
+
+        }
+        .column1{
+            float: left;
+            margin-top: 10%;
+            /* margin-: ; */
+            width: 500px;
+            height: 500px;
+            background-color: rgb(226, 229, 232);
+            border-radius: 9px;
+            display: flex;
+            /* flex-direction: column; */
+            /* padding-left: 20%; */
+justify-content: center;
+
+        }
+        .content{
+            /* background-color: black; */
+            display: none;
+            top: 0;
+            left:0;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            /* display: none; */
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(49, 48, 49, 0.979);
+        }
+        .message{
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+            text-align: center;
+
+        }
+    </style>
+    <script>
+        // var fn;
+        function fun(){
+            
+            var fn=document.getElementById('fn').value;
+            var em=document.getElementById('em').value;
+            var pa=document.getElementById('pa').value;
+            var ca=document.getElementById('cpa').value;
+            if (fn.length<3){
+                document.getElementById('fnn').innerHTML='invalid enter the name which greater than 3';
+            }
+            else{
+                document.getElementById('fnn').innerHTML=' ';
+            }
+            
+        }
+        function lo(){
+            var username,password;
+            username=document.getElementById('emm').value;
+            password=document.getElementById('ppa').value;
+            if (username=='v@gmail.com' && password=='12345678'){
+                // document.getElementById('bro').style.display='flex';
+                document.getElementById('content').style.display='flex';
+                document.getElementById('Lo').innerHTML="anna nuvu mavonive anna nuvu ma onive";
+            }
+            else{
+                document.getElementById('content').style.display='flex';
+                document.getElementById('Lo').innerHTML="evaru nuv ela undavu enti";
+            }
+        }
+
+        function closee(){
+            document.getElementById('content').style.display='none';
+        }
+    </script>
+</head>
+<body>
+    <div class="master">
+        <div class="column">
+            
+            <form action="" style="margin: 27%;">
+                <h1>Register</h1>
+                <label for="">first name :</label><br>
+                <input type="text" name="" id="fn" required oninput="fun()">
+                <span id="fnn"></span><br>
+                <label for="">email:</label><br>
+                <input type="email" name="" id="em" required  title="enter valid email"><br>
+
+                <label for="">password:</label><br>
+                <input type="text" name="" id="pa" required pattern="[a-zA-Z0-9]{8}"><br>
+
+                <label for="">conform password:</label><br>
+                <input type="password" name="" id="cpa" required pattern="[a-zA-Z0-9]{8}"><br>
+                <input type="submit" value="submit">
+                <input type="reset" value="reset">
+            </form>
+        </div>
+        <div class="column1">
+            
+            <form action="" style="margin: 27%;">
+                <h1>Login</h1>
+
+                <label for=""> username/email:</label><br>
+                <input type="email" name="" id="emm" required title="enter valid email"><br>
+
+                <label for="">password:</label><br>
+                <input type="text" name="" id="ppa" required pattern="[0-9]{8}" title="enter the valid "><br>
+                
+                <input type="button" onclick="lo()" value="submit">
+                <input type="reset" value="reset">
+                <!-- <p id="Lo" ></p> -->
+            </form>
+        </div>
+        
+        <div class="content" id="content">
+            <div class="message">
+                <p id="Lo"></p>
+                <button onclick="closee()">close</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
